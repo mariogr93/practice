@@ -1,4 +1,4 @@
-{
+var DATA = {
     "ide": "IDE: Integrated Development Environment is a software application that provides comprehensive facilities to computer programmers for software development.",
     "text-editor": "Text Editor: is a type of computer program that edits plain text.",
     "pseudocode": "Pseudocode: is an informal high-level description of the operating principle of a computer program or other algorithm. It uses the structural conventions of a normal programming language, but is intended for human reading rather than machine reading.",
@@ -77,4 +77,8 @@
     "open-source": "Open-Source: Open-source software (OSS) is any computer software that's distributed with its source code available for modification.",
     "cross-platform": "Cross-Platform: is computer software that is implemented on multiple computing platforms. Cross-platform software may be divided into two types; one requires individual building or compilation for each platform that it supports, and the other one can be directly run on any platform without special preparation",
     "fetch": "Fetch: Fetch describes the process of a software program, script, or hardware device retrieving data and then moving it to an alternate location or displaying it."
+};
+
+function printer(){
+    console.log(DATA);
 }
