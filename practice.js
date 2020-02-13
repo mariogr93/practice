@@ -71,3 +71,84 @@ const palinrome = string => {
 }
 
 palinrome('wow');
+
+///////////////////////////////////////////////////////////////
+
+console.log("prueba de every");
+
+const computers = [    {name:"dell", ram:16, HD:1500},
+{name:"MSI", ram:32, HD:2000},
+{name:"Razer", ram:32, HD:1300},
+{name:"Apple", ram:8, HD:1000}      ];
+
+// console.log(
+//     computers.map(computer=>computer.ram>=16?computer:{computer.qualify: " does not qualify"}));
+
+console.log(
+    computers.filter(function(computer){
+        return computer.ram>=16
+    }).every(function(computer){return computer.HD>900}));
+
+
+/////////////////////////////////////////////////////////////
+
+console.log("balance.....")
+
+
+console.log("((())".split('').reduce(function(x,e){if(e === '('){return x+1 } else{return x-1}}, 0));
+
+const math = {
+    multiply(...arg){
+        return arg.reduce((x,e)=>x*e,1);
+    }
+}
+
+console.log(math.multiply(1,2,3));
+
+///////////////////////////////////////////////////////
+
+console.log("////////////////////////////")
+const points = [[4,5], [10,1], [0,40]];
+
+const newPoints = points.map((e)=>{
+    const [a, b] = e;
+    return {a,b};
+});
+
+
+console.log(newPoints);
+
+///////////////////////////////////////////////////////
+
+console.log("////////////////////////////")
+const names = [[[4,5],[5,4]], [[2,1],[1,2]], [[0,3],[3,0]]];
+
+const newNames = names.map((e)=>{
+    let [a,b] = e;
+    let [x1,y1] = a;
+    let [x2,y2] = b;
+    return [{x1,y1},{x2,y2}];
+});
+
+console.log(names);
+console.log(newNames);
+console.log("////////////////////////////")
+newNames.forEach(e=>e.forEach(x=>console.log(x)));
+
+
+console.log("////////////////////////////")
+
+function spiralNum(n){
+    const finalArr = [];
+    for(let i = 0 ; i < n ; i++){
+        finalArr.push([i]);
+    }
+
+
+    
+    return finalArr;
+}
+
+console.log(spiralNum(5));
+
+
