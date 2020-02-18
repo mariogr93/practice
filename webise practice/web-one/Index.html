@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <script type="text/javascript" src="app.js"></script>
+    <title>Document</title>
+  </head>
+  <body>
+    <button onclick="prueba()">connection</button>
+  </body>
+
+  <script>
+    const express = require("express");
+    const mongooes = require("mongoose");
+
+    const connectionLink = require("./Connection");
+    const postsRoute = require("./routes/Post.routes");
+
+    const app = express();
+    app.listen(5000);
+
+    mongooes.connect(connectionLink, { useUnifiedTopology: true }, () =>
+      console.log("connected to db")
+    );
+
+    app.use("/posts", postsRoute);
+
+    app.get("/", (req, res) => {
+      res.send("<h1>hola</h1>");
+
+      console.log("llego algo", req.body);
+    });
+  </script>
+</html>
